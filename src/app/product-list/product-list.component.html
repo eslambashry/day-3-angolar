@@ -1,0 +1,33 @@
+<div>   
+<div style="margin: 3rem;">
+  <div class="container my-5">
+    <div class="row mb-4">
+      <div class="col-md-8 mx-auto">
+        <div class="input-group shadow-sm rounded mb-4">
+          <input type="text" [(ngModel)]="categorySearch" (input)="onCategorySearch()" class="form-control border-0" placeholder="Search by category">
+          <div class="input-group-append">
+            <button class="btn btn-primary" (click)="onSortDirectionChange()">
+              Sort by Price: {{ sortDirection === 'asc' ? 'Ascending' : 'Descending' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="container my-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center mb-4">Product List</h1>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4 equal-height-row">      <!-- with @for -->
+    @for (product of filteredProducts; track product.id) {     
+      <app-single-product
+      [productId]="product.id"></app-single-product>
+    }  
+    </div>
+    </div>
+  </div>
+  
+</div>
+

@@ -1,0 +1,21 @@
+  <div class="col" style="height: 100%;">
+    <div class="card h-100">
+      <img [src]="selectedProduct.image" class="card-img-top" alt="{{ selectedProduct.title }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ selectedProduct.title }}</h5>
+        <p class="card-text">{{ selectedProduct.description }}</p>
+        <p class="card-text"><strong>Category:</strong> {{ selectedProduct.category }}</p>
+        <p class="card-text"><strong>Price:</strong> {{ selectedProduct.price | currency: '€' }}</p>
+        <p class="card-text">
+          <strong>Rating:</strong> {{ selectedProduct.rating.rate }} 
+          <span class="text-muted">({{ selectedProduct.rating.count }} reviews)</span>
+        </p>
+        <app-product-rate></app-product-rate>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary btn-block">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  
